@@ -20,43 +20,38 @@ main{padding:calc(env(safe-area-inset-top) + 16px) 16px calc(112px + env(safe-ar
 .glow{position:relative}
 .glow::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;background:conic-gradient(from var(--a),var(--ice),var(--blue),var(--amb),var(--ice));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:spin 7s linear infinite}
 @keyframes spin{to{--a:360deg}}
-h1{font-size:28px;margin:0;letter-spacing:-.5px}h2{font-size:24px;margin:0 0 4px}
+h2{font-size:24px;margin:0 0 4px}h3{font-size:18px;margin:22px 0 12px}
 .sub{color:var(--mu);font-size:15px;margin-bottom:16px}
 .top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:19px;color:#06101f;background:linear-gradient(135deg,var(--ice),var(--blue))}
 .top small{color:var(--mu);display:block;font-size:13px}
-.chip{margin-left:auto;padding:7px 12px;border-radius:99px;font-size:13px;font-weight:600;color:var(--ice)}
+.chip{margin-left:auto;padding:7px 12px;border-radius:99px;font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:7px}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ice);animation:blink 2s ease-in-out infinite}@keyframes blink{50%{opacity:.25}}
 .hero{border-radius:28px;padding:20px;display:flex;align-items:center;gap:20px;margin-bottom:14px}
 .rw{position:relative;width:112px;height:112px;flex:none}.rw div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font-size:24px;font-weight:700}.rw small{font-size:11px;color:var(--mu);font-weight:500}
 .ring{width:112px;height:112px;transform:rotate(-90deg)}.trk{fill:none;stroke:rgba(255,255,255,.08);stroke-width:8}
 .arc{fill:none;stroke:url(#g);stroke-width:8;stroke-linecap:round;stroke-dasharray:276.5;stroke-dashoffset:276.5;transition:stroke-dashoffset 1.5s var(--ease) .3s}
 .big{font-size:46px;font-weight:800;letter-spacing:-1.5px;line-height:1;font-variant-numeric:tabular-nums}.hero p{margin:4px 0 0;color:var(--mu);font-size:14px}
-.conn{border-radius:28px;padding:26px 20px 22px;text-align:center;margin-bottom:14px}
-.pw{position:relative;width:132px;height:132px;margin:0 auto 18px;border-radius:50%;border:1.5px solid var(--ln);background:var(--sf);color:var(--mu);display:grid;place-items:center;transition:all .6s var(--ease)}
-.pw svg{width:52px;height:52px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;transition:transform .5s var(--spring)}
-.pw:active{transform:scale(.93)}
-.pw::after,.pw::before{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--ice);opacity:0}
-.pw.on{color:#06101f;background:linear-gradient(135deg,var(--ice),var(--blue));border-color:transparent;box-shadow:0 0 60px rgba(127,227,255,.45)}
-.pw.on svg{transform:scale(1.12)}
-.pw.on::after{animation:pulse 2.4s ease-out infinite}.pw.on::before{animation:pulse 2.4s ease-out 1.2s infinite}
-@keyframes pulse{from{opacity:.8;transform:scale(1)}to{opacity:0;transform:scale(1.7)}}
-.st{font-size:20px;font-weight:700}.tm{color:var(--mu);margin-top:4px;font-variant-numeric:tabular-nums;font-size:15px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.two>div{border-radius:20px;padding:14px 16px;font-size:13px;color:var(--mu)}.two b{display:block;color:var(--tx);font-size:21px;margin-top:2px}
+.sc{border-radius:28px;padding:20px;margin-bottom:14px}
+.kh{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;margin-bottom:12px}.kh svg{width:26px;height:26px;stroke:var(--ice);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.url{font:13px ui-monospace,Menlo,monospace;color:var(--ice);padding:13px 14px;border-radius:14px;background:rgba(127,227,255,.07);border:1px dashed rgba(127,227,255,.35);margin-bottom:12px;word-break:break-all}
+.btn{position:relative;overflow:hidden;width:100%;padding:16px;border:0;border-radius:18px;font:700 17px ui-rounded,-apple-system,sans-serif;color:#06101f;background:linear-gradient(135deg,var(--ice),var(--blue));box-shadow:0 12px 32px -12px rgba(91,124,255,.9);transition:transform .35s var(--spring)}
+.btn:active{transform:scale(.95)}.btn.ghost{background:var(--sf);color:var(--tx);border:1px solid var(--ln);box-shadow:none;margin-top:10px}
+.rip{position:relative;overflow:hidden}.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:rp .65s ease-out;pointer-events:none}@keyframes rp{to{transform:scale(1);opacity:0}}
+.kr{display:flex;align-items:center;gap:14px;border-radius:20px;padding:14px 16px;margin-bottom:10px;transition:transform .4s var(--spring),border-color .3s}.kr:active{transform:scale(.96);border-color:var(--ice)}
+.kr .fl{font-size:30px}.kr b{font-size:17px}.kr small{display:block;color:var(--mu);font-size:13px;margin-top:2px}
+.cp{margin-left:auto;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;border:1px solid var(--ln);flex:none}.cp svg{width:20px;height:20px;stroke:var(--ice);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.app{border-radius:22px;padding:16px;transition:transform .4s var(--spring),border-color .3s}.app:active{transform:scale(.93);border-color:var(--ice)}
+.app i{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:21px;color:#06101f;margin-bottom:12px}.app b{display:block;font-size:17px}.app small{color:var(--mu);font-size:12px}
 .plan{position:relative;display:flex;align-items:center;gap:12px;border-radius:22px;padding:18px;margin-bottom:12px;transition:transform .45s var(--spring),border-color .3s,box-shadow .4s}
 .plan b{font-size:18px}.plan small{display:block;color:var(--mu);font-size:13px;margin-top:2px}.pr{margin-left:auto;text-align:right}.pr b{font-size:22px}
 .plan.sel{transform:scale(1.02);border-color:var(--ice);box-shadow:0 0 0 1px var(--ice),0 14px 44px -14px rgba(127,227,255,.55)}
 .chk{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ln);flex:none;display:grid;place-items:center;transition:all .35s var(--spring)}
 .plan.sel .chk{background:var(--ice);border-color:var(--ice);transform:scale(1.12)}.plan.sel .chk::after{content:"";width:6px;height:11px;border:solid #06101f;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
 .badge{position:absolute;top:-10px;right:18px;padding:4px 11px;border-radius:99px;background:var(--amb);color:#2a1800;font-size:12px;font-weight:700;font-style:normal}
-.btn{position:relative;overflow:hidden;width:100%;padding:16px;border:0;border-radius:18px;font:700 17px ui-rounded,-apple-system,sans-serif;color:#06101f;background:linear-gradient(135deg,var(--ice),var(--blue));box-shadow:0 12px 32px -12px rgba(91,124,255,.9);transition:transform .35s var(--spring)}
-.btn:active{transform:scale(.95)}.btn.ghost{background:var(--sf);color:var(--tx);border:1px solid var(--ln);box-shadow:none;margin-top:10px}
-.rip{position:relative;overflow:hidden}.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:rp .65s ease-out;pointer-events:none}@keyframes rp{to{transform:scale(1);opacity:0}}
-.key{border-radius:20px;padding:16px;font:13px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--ice);margin-bottom:12px;-webkit-user-select:text;user-select:text}
-.pl{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.pl span{padding:9px 15px;border-radius:99px;font-size:14px;border:1px solid var(--ln);background:var(--sf);transition:all .35s var(--spring)}
-.pl span.on{background:var(--ice);color:#06101f;border-color:var(--ice);font-weight:700;transform:scale(1.07)}
-.step{display:flex;gap:14px;align-items:flex-start;border-radius:18px;padding:14px;margin-bottom:10px;font-size:15px}.step i{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px;color:var(--ice);border:1.5px solid var(--ice)}
 .faq{border-radius:18px;margin-bottom:10px;padding:16px;transition:border-color .3s}.faq.open{border-color:var(--ice)}
-.faq .q{display:flex;justify-content:space-between;font-weight:600;font-size:16px}.faq .q::after{content:"+";font-size:22px;line-height:1;color:var(--ice);transition:transform .45s var(--spring)}.faq.open .q::after{transform:rotate(135deg)}
+.faq .q{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:16px}.faq .q::after{content:"+";font-size:22px;line-height:1;color:var(--ice);transition:transform .45s var(--spring)}.faq.open .q::after{transform:rotate(135deg)}
 .faq .b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}.faq.open .b{grid-template-rows:1fr}.faq .b div{overflow:hidden;color:var(--mu);font-size:15px;line-height:1.45}.faq.open .b div{padding-top:10px}
 .tabs{position:fixed;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;padding:6px;border-radius:30px;z-index:5;box-shadow:0 20px 50px -10px rgba(0,0,0,.7);background:rgba(14,19,40,.72)}
 .ind{position:absolute;top:6px;bottom:6px;left:6px;width:calc((100% - 12px)/4);border-radius:24px;background:rgba(127,227,255,.13);border:1px solid rgba(127,227,255,.4);transition:transform .6s var(--spring)}
@@ -74,35 +69,42 @@ h1{font-size:28px;margin:0;letter-spacing:-.5px}h2{font-size:24px;margin:0 0 4px
 <div class="toast" id="toast"></div>
 <script>
 const tg=window.Telegram.WebApp,$=s=>document.querySelector(s);
+const G=new URLSearchParams(location.search).get('go');
+if(G){
+  document.querySelector('.tabs').remove();
+  const ok=/^(happ|incy|v2raytun|streisand|hiddify):\/\//i.test(G);
+  $('#app').innerHTML='<div class="page" style="text-align:center;padding-top:28vh"><h2>Открываем приложение…</h2><div class="sub">Если ничего не произошло, нажмите кнопку</div><a class="btn" style="display:block;text-decoration:none" id="op">Открыть</a></div>';
+  if(ok){$('#op').href=G;setTimeout(()=>location.href=G,300)}else $('#app').innerHTML='<div class="page" style="padding-top:28vh;text-align:center"><h2>Ссылка не поддерживается</h2></div>';
+}else{
 try{tg.ready();tg.expand();tg.setHeaderColor('#080b18');tg.setBackgroundColor('#080b18')}catch(e){}
 const hp=(t='light')=>{try{tg.HapticFeedback.impactOccurred(t)}catch(e){}};
-const user=(tg.initDataUnsafe||{}).user,name=user?user.first_name:'гость';
-const IC={home:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',plans:'<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/>',conn:'<path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/>',help:'<path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-5.5A8 8 0 1 1 21 12z"/>'};
-const TABS=[['home','Главная'],['plans','Тарифы'],['conn','Ключ'],['help','Помощь']];
+const user=(tg.initDataUnsafe||{}).user,name=(user&&user.first_name)||'гость';
+const SUB='https://sub.macro.example/s/9fK2xQ7aLm';
+const IC={home:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',keys:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/>',apps:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',plans:'<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/>',copy:'<rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/>'};
+const svg=k=>`<svg viewBox="0 0 24 24">${IC[k]}</svg>`;
+const TABS=[['home','Главная','home'],['keys','Ключи','keys'],['apps','Установка','apps'],['plans','Тарифы','plans']];
 const PL=[{n:'1 месяц',s:'Для знакомства',p:199,m:199},{n:'3 месяца',s:'Самый популярный',p:499,m:166,hot:1},{n:'12 месяцев',s:'Год без забот',p:1490,m:124}];
-let on=false,t0=0,tm,sel=1,cur=-1,busy=false,os='iPhone';
+const KEYS=[['🇳🇱','Нидерланды','VLESS · Reality','vless://test-nl@nl.macro.example:443?security=reality#Macro-NL'],['🇩🇪','Германия','VLESS · Reality','vless://test-de@de.macro.example:443?security=reality#Macro-DE'],['🇫🇮','Финляндия','Hysteria2','hysteria2://test-fi@fi.macro.example:443#Macro-FI']];
+const APPS=[['Happ','H','iOS · Android · PC','happ://add/'+SUB,'#7fe3ff,#5b7cff'],['INCY','I','iOS · Android · PC','incy://import/'+SUB,'#ffb454,#ff7a59'],['v2RayTun','V','iOS · Android','v2raytun://import/'+SUB,'#9be58a,#35c2a0'],['Streisand','S','iOS · macOS','streisand://import/'+SUB,'#c9a7ff,#7a8cff'],['Hiddify','Hi','Все платформы','hiddify://import/'+SUB+'#Macro%20VPN','#ff9ec4,#ff6b9a']];
+const FAQ=[['Как добавить ключ в Happ','Откройте вкладку «Установка», нажмите Happ и подтвердите импорт. Либо скопируйте ссылку подписки и вставьте её в приложении.'],['Приложение не открывается','Сначала установите нужный клиент из App Store или Google Play, затем нажмите на него ещё раз.'],['Сколько устройств можно подключить','В тесте доступно до трёх устройств на одну подписку.']];
+let sel=1,cur=-1,busy=false;
 const P={
-home:()=>`<div class="page"><div class="top"><div class="av">${name[0].toUpperCase()}</div><div><small>Добро пожаловать</small><b style="font-size:19px">${name}</b></div><div class="chip glass">Premium</div></div>
-<div class="hero glass glow"><div class="rw"><svg class="ring" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fe3ff"/><stop offset="1" stop-color="#5b7cff"/></linearGradient></defs><circle class="trk" cx="50" cy="50" r="44"/><circle class="arc" id="arc" cx="50" cy="50" r="44"/></svg><div>96.8<small>ГБ из 100</small></div></div><div><div class="big" data-n="12">0</div><p>дней до продления</p></div></div>
-<div class="conn glass"><button class="pw" id="pw" onclick="toggle()"><svg viewBox="0 0 24 24"><path d="M12 3v9"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg></button><div class="st" id="st"></div><div class="tm" id="tm"></div></div>
-<div class="two"><div class="glass">Скорость<b>38 Мбит/с</b></div><div class="glass">Пинг<b>24 мс</b></div></div></div>`,
-plans:()=>`<div class="page"><div><h2>Тарифы</h2><div class="sub">Тестовые цены, оплата не подключена</div></div>${PL.map((p,i)=>`<div class="plan glass rip ${p.hot?'glow':''} ${i==sel?'sel':''}" onclick="pick(${i})"><div><b>${p.n}</b><small>${p.s}</small></div><div class="pr"><b>${p.p} ₽</b><small>${p.m} ₽/мес</small></div><div class="chk"></div>${p.hot?'<em class="badge">Выгодно</em>':''}</div>`).join('')}<button class="btn rip" onclick="pay()"><span id="pt">Оплатить ${PL[sel].p} ₽</span></button></div>`,
-conn:()=>`<div class="page"><div><h2>Подключение</h2><div class="sub">Тестовый ключ доступа</div></div><div class="key glass glow">vless://test-0000@macro.example:443?type=ws#MacroVPN</div><button class="btn rip" onclick="copyKey()">Скопировать ключ</button>
-<div class="pl">${['iPhone','Android','Windows','macOS'].map(o=>`<span class="${o==os?'on':''}" onclick="setOs('${o}',this)">${o}</span>`).join('')}</div>
-${['Скопируйте ключ','Откройте приложение и нажмите «Добавить»','Вставьте ключ и включите VPN'].map((t,i)=>`<div class="step glass"><i>${i+1}</i><span>${t}</span></div>`).join('')}</div>`,
-help:()=>`<div class="page"><div><h2>Помощь</h2><div class="sub">Ответы на частые вопросы</div></div>${[['VPN не подключается','Переключите сеть Wi-Fi/мобильную, перезапустите приложение и вставьте ключ заново.'],['Как продлить подписку','Откройте вкладку «Тарифы», выберите срок и нажмите «Оплатить».'],['Сколько устройств можно подключить','В тесте доступно до трёх устройств на один ключ.']].map(f=>`<div class="faq glass" onclick="this.classList.toggle('open');hp('light')"><div class="q">${f[0]}</div><div class="b"><div>${f[1]}</div></div></div>`).join('')}<button class="btn ghost rip" onclick="toast('Тест: чат поддержки')">Написать в поддержку</button></div>`};
+home:()=>`<div class="page"><div class="top"><div class="av">${name[0].toUpperCase()}</div><div><small>Добро пожаловать</small><b style="font-size:19px">${name}</b></div><div class="chip glass">Активна</div></div>
+<div class="hero glass"><div class="rw"><svg class="ring" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fe3ff"/><stop offset="1" stop-color="#5b7cff"/></linearGradient></defs><circle class="trk" cx="50" cy="50" r="44"/><circle class="arc" id="arc" cx="50" cy="50" r="44"/></svg><div>96.8<small>ГБ из 100</small></div></div><div><div class="big" data-n="12">0</div><p>дней до продления</p></div></div>
+<div class="sc glass glow"><div class="kh">${svg('keys')}Ссылка подписки</div><div class="url">https://sub.macro.example/s/9fK2••••••</div><button class="btn rip" onclick="copy(SUB,'Ссылка скопирована ✓')">Скопировать ссылку</button><button class="btn ghost rip" onclick="go('apps')">Добавить в приложение</button></div></div>`,
+keys:()=>`<div class="page"><div><h2>Мои ключи</h2><div class="sub">Нажмите на ключ, чтобы скопировать</div></div>${KEYS.map((k,i)=>`<div class="kr glass" onclick="copy(KEYS[${i}][3],'Ключ ${k[1]} скопирован ✓')"><div class="fl">${k[0]}</div><div><b>${k[1]}</b><small>${k[2]}</small></div><div class="cp">${svg('copy')}</div></div>`).join('')}<button class="btn ghost rip" onclick="hp('medium');toast('Тест: новая ссылка выдана')">Выдать новую ссылку</button></div>`,
+apps:()=>`<div class="page"><div><h2>Установка</h2><div class="sub">Нажмите на приложение, и ключ добавится сам</div></div><div class="grid">${APPS.map((a,i)=>`<div class="app glass rip" onclick="openApp(${i})"><i style="background:linear-gradient(135deg,${a[4]})">${a[1]}</i><b>${a[0]}</b><small>${a[2]}</small></div>`).join('')}</div><h3>Если не получается</h3>${FAQ.map(f=>`<div class="faq glass" onclick="this.classList.toggle('open');hp('light')"><div class="q">${f[0]}</div><div class="b"><div>${f[1]}</div></div></div>`).join('')}<button class="btn ghost rip" onclick="toast('Тест: чат поддержки')">Написать в поддержку</button></div>`,
+plans:()=>`<div class="page"><div><h2>Тарифы</h2><div class="sub">Тестовые цены, оплата не подключена</div></div>${PL.map((p,i)=>`<div class="plan glass rip ${p.hot?'glow':''} ${i==sel?'sel':''}" onclick="pick(${i})"><div><b>${p.n}</b><small>${p.s}</small></div><div class="pr"><b>${p.p} ₽</b><small>${p.m} ₽/мес</small></div><div class="chk"></div>${p.hot?'<em class="badge">Выгодно</em>':''}</div>`).join('')}<button class="btn rip" onclick="hp('medium');toast('Тест: оплата пока не подключена')"><span id="pt">Оплатить ${PL[sel].p} ₽</span></button></div>`};
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('show'),1900)}
-function paint(){const pw=$('#pw');if(!pw)return;pw.classList.toggle('on',on);$('#st').textContent=on?'Защищено':'Не подключено';const s=Math.floor((Date.now()-t0)/1000);$('#tm').textContent=on?'🇳🇱 Нидерланды · '+String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'):'Нажмите, чтобы включить'}
-function toggle(){on=!on;hp('heavy');try{tg.HapticFeedback.notificationOccurred(on?'success':'warning')}catch(e){}if(on){t0=Date.now();tm=setInterval(paint,1000)}else clearInterval(tm);paint()}
+function copy(k,msg){(navigator.clipboard?navigator.clipboard.writeText(k):Promise.reject()).catch(()=>{const a=document.createElement('textarea');a.value=k;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}).finally(()=>{hp('medium');toast(msg)})}
+function openApp(i){hp('medium');const u=location.origin+location.pathname+'?go='+encodeURIComponent(APPS[i][3]);try{tg.openLink(u)}catch(e){location.href=u}}
 function pick(i){sel=i;hp('light');document.querySelectorAll('.plan').forEach((e,j)=>e.classList.toggle('sel',j==i));$('#pt').textContent='Оплатить '+PL[i].p+' ₽'}
-function pay(){hp('medium');toast('Тест: оплата пока не подключена')}
-function setOs(o,el){os=o;hp('light');document.querySelectorAll('.pl span').forEach(s=>s.classList.toggle('on',s==el))}
-function copyKey(){const k='vless://test-0000@macro.example:443?type=ws#MacroVPN';(navigator.clipboard?navigator.clipboard.writeText(k):Promise.reject()).catch(()=>{const a=document.createElement('textarea');a.value=k;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}).finally(()=>{hp('medium');toast('Ключ скопирован ✓')})}
-function after(){document.querySelectorAll('[data-n]').forEach(el=>{const to=+el.dataset.n,s=performance.now();(function f(t){const p=Math.min(1,(t-s)/900);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)});const a=$('#arc');if(a)requestAnimationFrame(()=>requestAnimationFrame(()=>a.style.strokeDashoffset=276.5*(1-.968)));paint()}
+function after(){document.querySelectorAll('[data-n]').forEach(el=>{const to=+el.dataset.n,s=performance.now();(function f(t){const p=Math.min(1,(t-s)/900);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)});const a=$('#arc');if(a)requestAnimationFrame(()=>requestAnimationFrame(()=>a.style.strokeDashoffset=276.5*(1-.968)))}
 function go(k,first){const i=TABS.findIndex(t=>t[0]==k);if(i==cur||busy)return;const el=$('#app');el.style.setProperty('--dx',(i>cur?26:-26)+'px');const swap=()=>{el.innerHTML=P[k]();[...el.firstChild.children].forEach((c,j)=>c.style.setProperty('--i',j));cur=i;busy=false;scrollTo(0,0);after()};$('#ind').style.transform=`translateX(${i*100}%)`;document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('on',j==i));if(first)return swap();hp('light');busy=true;el.firstChild.classList.add('out');setTimeout(swap,200)}
-TABS.forEach(t=>{const b=document.createElement('div');b.className='tab';b.innerHTML=`<svg viewBox="0 0 24 24">${IC[t[0]]}</svg>${t[1]}`;b.onclick=()=>go(t[0]);$('#tabs').appendChild(b)});
+TABS.forEach(t=>{const b=document.createElement('div');b.className='tab';b.innerHTML=svg(t[2])+t[1];b.onclick=()=>go(t[0]);$('#tabs').appendChild(b)});
 document.addEventListener('pointerdown',e=>{const r=e.target.closest('.rip');if(!r)return;const b=r.getBoundingClientRect(),d=Math.max(b.width,b.height)*2.2,s=document.createElement('span');s.className='rp';s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-b.left-d/2}px;top:${e.clientY-b.top-d/2}px`;r.appendChild(s);setTimeout(()=>s.remove(),650)});
 go('home',true);
+}
 </script>
 </body>
 </html>
