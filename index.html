@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body style="text-align:center;padding:30px;font-family:sans-serif">
+<h2 id="hello">Привет!</h2>
+<div id="n" style="font-size:64px">0</div>
+<button style="font-size:22px;padding:16px" onclick="tap()">👆 Тап</button>
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+const u = tg.initDataUnsafe.user;
+document.getElementById('hello').textContent = 'Привет, ' + (u ? u.first_name : 'гость') + '!';
+let c = 0;
+function tap(){ c++; document.getElementById('n').textContent = c; }
+</script>
+</body>
+</html>
